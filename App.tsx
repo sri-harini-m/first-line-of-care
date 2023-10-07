@@ -12,6 +12,7 @@ import { FirebaseAuth } from "./firebaseConfig";
 import DrawerItems from "./constants/MenuItems";
 import Appointment from "./pages/Appointment";
 import { Feather } from "@expo/vector-icons";
+import DoctorDetails from "./pages/nestedPages/DoctorDetails";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -77,11 +78,12 @@ export default function App() {
         ) : (
           <>
             <Stack.Group>
-              <Stack.Screen name="Home" component={MainScreen} />
+              <Stack.Screen name="Prior Care" component={MainScreen} />
               <Stack.Screen
                 name="Diagnose Details"
                 component={DiagnoseDetails}
               />
+              <Stack.Screen name="Doctor Details" component={DoctorDetails} />
             </Stack.Group>
           </>
         )}
