@@ -64,7 +64,7 @@ export default function Home({navigation}) {
 
 
 <Button
-  onPress={()=>{navigation.navigate("Diagnose Details")}}
+  onPress={()=>{navigation.navigate("Diagnose Details", Symptoms)}}
   title="Diagnose"
   color="#2f2f2f"
 />

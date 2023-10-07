@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
-export default function DiagnoseDetails() {
+export default function DiagnoseDetails({ route, navigation }) {
+  const symptoms = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.body}>
@@ -10,7 +11,14 @@ export default function DiagnoseDetails() {
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.infoLabel}>Symptoms:</Text>
-          <Text style={styles.infoText}>Fever</Text>
+
+          {symptoms.map((item, i) => {
+            return (
+              <Text style={styles.infoText} key={i}>
+                {item},
+              </Text>
+            );
+          })}
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.infoLabel}>Severity:</Text>
@@ -27,7 +35,10 @@ export default function DiagnoseDetails() {
           <Text style={styles.infoText}>Contact(button here)</Text>
         </View> */}
         <View style={styles.button}>
-          <Button title="Contact a doctor" />
+          <Button
+            title="Contact a doctor"
+            onPress={console.log(route.params)}
+          />
           {/* onPress={onPressLearnMore} */}
         </View>
       </View>
