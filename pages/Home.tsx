@@ -1,19 +1,32 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Home() {
+    const [number, setNumber] = useState(null) 
+
+    const onChangeNumber = (givenNumber) =>{
+        setNumber(givenNumber)
+    }
     return (
       <View>
-        <Text>Hello world! </Text>
+        
+        <TextInput
+        style={styles.input}
+        onChangeText={() =>{onChangeNumber(number)}}
+        value={number}
+        placeholder="Enter Age"
+        keyboardType="numeric"
+      />
       </View>
     );
   }
   
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "center",
-    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
   });
   
