@@ -15,7 +15,7 @@ export default [
     iconName: "user",
   },
   {
-    name: "shop",
+    name: "Shop",
     iconType: "Feather",
     iconName: "user",
   },

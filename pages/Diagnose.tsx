@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import { useState } from "react";
 import {
   Button,
@@ -9,6 +10,7 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { FirebaseAuth } from "../firebaseConfig";
 
 export default function Home({ navigation }) {
   const [number, setNumber] = useState(null);
@@ -22,6 +24,10 @@ export default function Home({ navigation }) {
     setSymptoms([...Symptoms, singleSymptom]);
     setsingleSymptom("");
   };
+  const signoutFirebase = async () => {
+    signOut(FirebaseAuth);
+  };
+
   return (
     <View>
       <ScrollView>
@@ -96,6 +102,16 @@ export default function Home({ navigation }) {
           title="Diagnose"
           color="#2f2f2f"
         />
+
+        <Pressable
+          onPress={() => {
+            signoutFirebase();
+          }}
+        >
+          <Text style={{ padding: 20, alignSelf: "center", color: "red" }}>
+            SignOut
+          </Text>
+        </Pressable>
       </ScrollView>
     </View>
   );

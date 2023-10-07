@@ -54,7 +54,7 @@ const MainScreen = () => {
             //drawer.name==='LoginScreen' ? LoginScreen
             drawer.name === "Diagnose"
               ? Diagnose
-              : drawer.name == "shop"
+              : drawer.name == "Shop"
               ? ShopPage
               : Appointment
           }
