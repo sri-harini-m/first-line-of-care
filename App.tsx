@@ -13,6 +13,7 @@ import DrawerItems from "./constants/MenuItems";
 import Appointment from "./pages/Appointment";
 import { Feather } from "@expo/vector-icons";
 import DoctorDetails from "./pages/nestedPages/DoctorDetails";
+import ShopPage from "./pages/shop";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -51,7 +52,11 @@ const MainScreen = () => {
           }}
           component={
             //drawer.name==='LoginScreen' ? LoginScreen
-            drawer.name === "Diagnose" ? Diagnose : Appointment
+            drawer.name === "Diagnose"
+              ? Diagnose
+              : drawer.name == "shop"
+              ? ShopPage
+              : Appointment
           }
         />
       ))}
