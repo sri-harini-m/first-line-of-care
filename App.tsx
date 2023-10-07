@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Diagnose from "./pages/Diagnose";
+import DiagnoseDetails from "./pages/nestedPages/DiagnoseDetails";
 
 
 
@@ -14,9 +15,12 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen
-          name="Home Page"
+          name="Diagnose"
           component={Diagnose}/>
-
+      <Stack.Screen
+      name="Diagnose Details"
+      component={DiagnoseDetails}
+      />
       </Stack.Navigator>
     </NavigationContainer>
   );

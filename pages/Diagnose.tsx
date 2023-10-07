@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button, FlatList, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, FlatList, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 
-export default function Home() {
+export default function Home({navigation}) {
     const [number, setNumber] = useState(null) 
     const [singleSymptom, setsingleSymptom] = useState("")
     const [Symptoms , setSymptoms] = useState([])
@@ -17,7 +17,7 @@ export default function Home() {
     }
     return (
       <View>
-        
+        <ScrollView>
         <TextInput
         style={styles.input}
         onChangeText={(num) =>{onChangeNumber(num)}}
@@ -52,22 +52,23 @@ export default function Home() {
         color: 'red',}}>add symptom</Text>
     </Pressable>
     </View>
+    {Symptoms.map((item,i) => {
+        return (
+          <View style={{flexDirection:"row",padding:10}} key={i}><Text style={{padding:10, fontSize:20}}>{item}</Text>
+          <Pressable onPress={()=>setSymptoms(Symptoms.filter(a => a !== item))}>
+          <Text style={{padding:15, color:"red"}}>Delete</Text>
+          </Pressable>
+  </View>
+        );
+      })}
 
-<FlatList 
-        data={Symptoms}
-        renderItem={({item}) => <View style={{flexDirection:"row",padding:10}}><Text style={{padding:10, fontSize:20}}>{item}</Text>
-        <Pressable onPress={()=>setSymptoms(Symptoms.filter(a => a !== item))}>
-        <Text style={{padding:15, color:"red"}}>Delete</Text>
-        </Pressable>
-</View>}
-        keyExtractor={item => item}
-      />
 
 <Button
-  onPress={()=>{console.log(Symptoms, number)}}
+  onPress={()=>{navigation.navigate("Diagnose Details")}}
   title="Diagnose"
   color="#2f2f2f"
 />
+</ScrollView>
       </View>
     );
   }
