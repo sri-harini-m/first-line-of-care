@@ -112,8 +112,11 @@ export default function DiagnoseDetails({ route, navigation }) {
         </View>
         <View style={styles.infoContainer}>
           <Text style={styles.infoLabel}>Recommended Action:</Text>
+        </View>
+        <View style={styles.infoContainere}>
           <Text style={styles.infoText}>{recommended}</Text>
         </View>
+
         {/* <View style={styles.infoContainer}>
           <Text style={styles.infoLabel}>Contact a doctor</Text>
           <Text style={styles.infoText}>Contact(button here)</Text>
@@ -149,6 +152,13 @@ const styles = StyleSheet.create({
     marginTop: 12,
     paddingHorizontal: 12,
     paddingTop: 12,
+  },
+  infoContainere: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 5,
+    paddingHorizontal: 12,
+    paddingTop: 5,
   },
   infoLabel: {
     fontSize: 20,
