@@ -60,7 +60,7 @@ export default function DiagnoseDetails({ route, navigation }) {
       const response = await axios.post(
         "https://api.openai.com/v1/engines/text-davinci-003/completions", //idk chat gpt said i have to add this to use apis
         {
-          prompt: `User: my child is ${age} years old and has a ${userInput} what would be a probable diagnosis for him? write only the diagnosis inside {} and nothing else. what would be the recommedned action to do at home to take. write inside <>. also write how severe it is from high mild and low write in this [] \n`,
+          prompt: `User: my child is ${age} years old and has a ${userInput} what would be a probable diagnosis for him? write only the diagnosis inside { } and nothing else. what would be the recommedned action to do at home to take. write this inside < >. also write how severe it is from high mild and low write it inside this [ ] \n`,
           max_tokens: 150,
           n: 1,
         },
