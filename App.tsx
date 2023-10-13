@@ -14,6 +14,9 @@ import Appointment from "./pages/Appointment";
 import { Feather } from "@expo/vector-icons";
 import DoctorDetails from "./pages/nestedPages/DoctorDetails";
 import ShopPage from "./pages/shop";
+import ProductInfo from "./pages/nestedPages/ProductInfo";
+import MyCart from "./pages/nestedPages/MyCart";
+import Shop from "./pages/shop";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -89,6 +92,9 @@ export default function App() {
                 component={DiagnoseDetails}
               />
               <Stack.Screen name="Doctor Details" component={DoctorDetails} />
+              <Stack.Screen name="ProductInfo" component={ProductInfo} />
+              <Stack.Screen name="MyCart" component={MyCart} />
+              <Stack.Screen name="Shop" component={Shop} />
             </Stack.Group>
           </>
         )}

@@ -77,7 +77,7 @@ export default function DiagnoseDetails({ route, navigation }) {
         /*gives an id to each response tried making it serial but didnt work so some dude said to do this*/
         {
           _id: Math.round(Math.random() * 1000000),
-          text: `Legal Bot: ${response.data.choices[0].text.trim()}`,
+          text: `Med Bot: ${response.data.choices[0].text.trim()}`,
           createdAt: new Date(),
         },
       ];
