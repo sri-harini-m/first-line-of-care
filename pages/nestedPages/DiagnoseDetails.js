@@ -68,7 +68,7 @@ export default function DiagnoseDetails({ route, navigation }) {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer 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", // said api do not copy this is secret lmao
+              "Bearer API", // said api do not copy this is secret lmao
           },
         }
       );
