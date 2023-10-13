@@ -92,6 +92,7 @@ export default function App() {
                 component={DiagnoseDetails}
               />
               <Stack.Screen name="Doctor Details" component={DoctorDetails} />
+              <Stack.Screen name="Appointment" component={Appointment} />
               <Stack.Screen name="ProductInfo" component={ProductInfo} />
               <Stack.Screen name="MyCart" component={MyCart} />
               <Stack.Screen name="Shop" component={Shop} />

@@ -124,7 +124,7 @@ export default function DiagnoseDetails({ route, navigation }) {
         <View style={styles.button}>
           <Button
             title="Contact a doctor"
-            onPress={console.log(route.params)}
+            onPress={() => navigation.navigate("Appointment")}
           />
           {/* onPress={onPressLearnMore} */}
         </View>
